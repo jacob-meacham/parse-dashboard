@@ -108,7 +108,7 @@ module.exports = function(config, allowInsecureHTTP) {
           response.apps = response.apps.filter(function (app) {
             return appsUserHasAccess.find(appUserHasAccess => {
               return app.appId == appUserHasAccess.appId ||
-              (app.appSecondaryId && app.appSecondaryId == app.UserHasAccess.appSecondaryId)
+              (app.appSecondaryId && app.appSecondaryId == appUserHasAccess.appSecondaryId)
             })
           });
         }
