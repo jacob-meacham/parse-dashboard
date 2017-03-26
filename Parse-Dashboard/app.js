@@ -107,7 +107,8 @@ module.exports = function(config, allowInsecureHTTP) {
           // If they didn't supply any app id, user will access all apps
           response.apps = response.apps.filter(function (app) {
             return appsUserHasAccess.find(appUserHasAccess => {
-              return app.appId == appUserHasAccess.appId
+              return app.appId == appUserHasAccess.appId ||
+              (app.appSecondaryId && app.appSecondaryId == app.UserHasAccess.appSecondaryId)
             })
           });
         }
